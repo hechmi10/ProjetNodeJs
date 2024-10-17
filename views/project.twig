@@ -1,0 +1,18 @@
+{% block body %}
+    <h1>Projets</h1><br />
+    <table>
+        <tr>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Fichier Joint</th>
+       </tr>
+     {% for project in projects %}
+        <tr>
+            <td>{{project.titre}}</td>
+            <td>{{project.description}}</td>
+            <td>{{project.fichierJoint}}</td>
+        </tr>
+     {% endfor %}
+    </table>
+    
+{% endblock %}
