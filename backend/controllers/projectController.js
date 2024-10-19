@@ -24,11 +24,6 @@ exports.updateProject = async (req, res) => {
     try {
         const titre = req.params.titre;
         const { newDescription } = req.body;
-        if (!newDescription) {
-            return res.status(400).json({
-                erreur: { message: "newDescription is required." },
-            });
-        }
         const [updated] = await Project.update(
             { description: newDescription }, 
             { where: { titre: titre } } 
