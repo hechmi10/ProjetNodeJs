@@ -1,12 +1,10 @@
 {% block body %}
   <h1>Mettre à jour un projet</h1>
-  <form action="/project/update" method="POST">
+  <form action="/project/update" method="PUT">
       <label for="titre">Titre du projet:</label><br>
       <input type="text" id="titre" name="titre" placeholder="Titre"><br>
       <label for="description">Description du projet:</label><br>
       <textarea cols="50px" rows="25px" id="description" name="description" placeholder="Description"></textarea><br>
-      <label for="fichier">Fichier Joint du projet:</label><br>
-      <input type="file" id="fichier" name="fichier" placeholder="Fichier"><br>
-      <button type="submit">Ajouter</button><br>
+      <button type="submit">Mettre à jour</button><br>
   </form>
 {% endblock %}
