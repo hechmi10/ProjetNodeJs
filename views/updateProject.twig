@@ -1,6 +1,6 @@
 {% block body %}
   <h1>Mettre à jour un projet</h1>
-  <form action="/project/update" method="PUT">
+  <form action="/project/update/:titre" method="PUT">
       <label for="titre">Titre du projet:</label><br>
       <input type="text" id="titre" name="titre" placeholder="Titre"><br>
       <label for="description">Description du projet:</label><br>
