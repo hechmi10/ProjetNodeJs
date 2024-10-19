@@ -1,5 +1,5 @@
 {% block body %}
-    <h1>Projets</h1><br /><button type="submit" href="/project/addProject">Ajouter un projet</button>
+    <h1>Projets</h1><br /><button type="submit" href="/project/addProject">Ajouter un projet</button><br/>
     <table>
         <tr>
             <th>Titre</th>
@@ -13,7 +13,7 @@
             <td>{{project.fichierJoint}}</td>
         </tr>
      {% endfor %}
-    </table>
-    <button type="submit" href="/project/updateProject">Mettre à jour un projet</button>
-    <button type="submit" href="/project/deleteProject">Supprimer un projet</button>
+    </table><br/>
+    <button type="submit" href="/project/updateProject">Mettre à jour un projet</button><br/>
+    <button type="submit" href="/project/deleteProject">Supprimer un projet</button><br/>
 {% endblock %}
