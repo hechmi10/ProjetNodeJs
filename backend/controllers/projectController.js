@@ -4,15 +4,6 @@ exports.addProject = async (req, res) => {
     console.log('Request body:', req.body); // Log the incoming request body
 
     try {
-        const { titre, description, fichierJoint } = req.body;
-
-        if (!titre || !description || !fichierJoint) {
-            return res.status(400).json({
-                erreur: {
-                    message: 'All fields (titre, description, fichierJoint) are required.',
-                },
-            });
-        }
 
         const newProject = await Project.create({ titre, description, fichierJoint });
         res.status(201).json(newProject);
