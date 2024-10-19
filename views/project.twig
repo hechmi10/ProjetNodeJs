@@ -1,5 +1,5 @@
 {% block body %}
-    <h1>Projets</h1><br /><button type="submit" href="/project/addProject">Ajouter un projet</button><br/>
+    <h1>Projets</h1><br /><a href="/project/addProject"><button type="submit">Ajouter un projet</button></a><br/>
     <table>
         <tr>
             <th>Titre</th>
@@ -14,6 +14,6 @@
         </tr>
      {% endfor %}
     </table><br/>
-    <button type="submit" href="/project/updateProject">Mettre à jour un projet</button><br/>
-    <button type="submit" href="/project/deleteProject">Supprimer un projet</button><br/>
+    <a href="/project/updateProject"><button type="submit">Mettre à jour un projet</button></a><br/>
+    <a href="/project/deleteProject"><button type="submit">Supprimer un projet</button></a><br/>
 {% endblock %}
