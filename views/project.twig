@@ -1,5 +1,5 @@
 {% block body %}
-    <h1>Projets</h1><br />
+    <h1>Projets</h1><br /><button type="submit" href="/project/addProject">Ajouter un projet</button>
     <table>
         <tr>
             <th>Titre</th>
@@ -14,5 +14,6 @@
         </tr>
      {% endfor %}
     </table>
-    
+    <button type="submit" href="/project/updateProject">Mettre à jour un projet</button>
+    <button type="submit" href="/project/deleteProject">Supprimer un projet</button>
 {% endblock %}
