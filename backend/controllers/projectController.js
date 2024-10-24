@@ -4,7 +4,7 @@ exports.addProject = async (req, res) => {
     console.log('Request body:', req.body); // Log the incoming request body
 
     try {
-
+        const {titre,description,fichierJoint}=req.body;
         const newProject = await Project.create({ titre, description, fichierJoint });
         res.status(201).json(newProject);
     } catch (error) {
