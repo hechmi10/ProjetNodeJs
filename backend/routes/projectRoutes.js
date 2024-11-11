@@ -16,16 +16,6 @@ router.get('/', async (req, res) => {
         });
     }
 });
-
-router.get('/addProject',(req,res)=>{
-    res.render('addProject');
-});
-router.get('/updateProject',(req,res)=>{
-    res.render('updateProject');
-});
-router.get('/deleteProject',(req,res)=>{
-    res.render('deleteProject');
-})
 router.post('/create',projectController.addProject);
 router.put('/update/:titre',projectController.updateProject);
 router.delete('/delete/:titre',projectController.deleteProject);
