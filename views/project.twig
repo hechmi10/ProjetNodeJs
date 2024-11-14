@@ -1,17 +1,41 @@
+{% block head %}
+  <meta charset="utf-8" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-I8NYljTT65N6oMT+iM0BPI5Tx+Nkqzn/yYYPavJ6wZLtxXvNx13DhVWpD+W1p8BG" crossorigin="anonymous">
+{% endblock %}
+
 {% block body %}
-    <h1>Projets</h1><br />
-    <table>
-        <tr>
-            <th>Titre</th>
-            <th>Description</th>
-            <th>Fichier Joint</th>
-       </tr>
-     {% for project in projects %}
-        <tr>
-            <td>{{project.titre}}</td>
-            <td>{{project.description}}</td>
-            <td>{{project.fichierJoint}}</td>
-        </tr>
-     {% endfor %}
-    </table><br/>
+  <div class="container my-5">
+    <div class="row">
+      <h1 class="text-center mb-4">Projets</h1>
+      {% if projects|length > 0 %}
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Titre</th>
+              <th scope="col">Description</th>
+              <th scope="col">Fichier Joint</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for project in projects %}
+              <tr>
+                <td>{{ project.titre }}</td>
+                <td>{{ project.description }}</td>
+                <td>
+                  {% if project.fichierJoint %}
+                    {{ project.fichierJoint }}
+                  {% else %}
+                    <span class="text-muted">Aucun fichier</span>
+                  {% endif %}
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p class="text-muted text-center">Aucun projet trouvé.</p>
+      {% endif %}
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrvhUHO+d3/6h8SNuac9sZJxdpN2qf45SaCNSbZBoXZfuKxVgfVZlj47ACp19kx5" crossorigin="anonymous"></script>
 {% endblock %}
